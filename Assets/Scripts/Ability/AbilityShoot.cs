@@ -23,20 +23,18 @@ public class AbilityShoot : AbilityBase
         var ps = Instantiate(_bulletPrefab, _shootPosition);
         ps.gameObject.SetActive(false);
 
-        ps.GetComponent<PooledParticleSystemCallback>().Pool = _bulletPool;
+        ps.GetComponent<PooledParticleListener>().Pool = _bulletPool;
 
         return ps;
     }
 
     private void OnTakeFromPool(ParticleSystem ps)
     {
-        Debug.Log("Pegou da pool");
         ps.gameObject.SetActive(true);
     }
 
     private void OnReturnToPool(ParticleSystem ps)
     {
-        Debug.Log("Retornou para pool");
         ps.gameObject.SetActive(false);
     }
 
