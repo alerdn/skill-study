@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6666315321841289027}
   - component: {fileID: 7847062970923093844}
   m_Layer: 0
-  m_Name: Bullet Explosion
+  m_Name: VFX_Shoot_Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -223,7 +223,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.36862746, g: 0.78039217, b: 0.8980392, a: 1}
+      maxColor: {r: 1, g: 0.9607843, b: 0.63529414, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}

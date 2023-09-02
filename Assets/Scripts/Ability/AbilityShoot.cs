@@ -45,14 +45,6 @@ public class AbilityShoot : AbilityBase
 
     #endregion
 
-    private void Update()
-    {
-        if (Input.GetMouseButton(0))
-        {
-            UseAbility();
-        }
-    }
-
     protected override void Ability()
     {
         var bullet = _bulletPool.Get();

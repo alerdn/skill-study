@@ -10,6 +10,7 @@ public class PlayerControlller : MonoBehaviour
     [SerializeField] private float _moveSpeed = 5f;
     [SerializeField] private float _jumpForce = 5f;
     [SerializeField] private LayerMask _groundMask;
+    [SerializeField] private AbilityMap[] _abilitiesMap;
 
     private CharacterController _characterController;
     private Camera _cam;
@@ -24,8 +25,20 @@ public class PlayerControlller : MonoBehaviour
 
     private void Update()
     {
+        Ability();
         Movement();
         Aim();
+    }
+
+    private void Ability()
+    {
+        foreach (AbilityMap abilityMap in _abilitiesMap)
+        {
+            if (Input.GetKey(abilityMap.KeyCode))
+            {
+                abilityMap.Ability.UseAbility();
+            }
+        }
     }
 
     private void Movement()
@@ -81,13 +94,18 @@ public class PlayerControlller : MonoBehaviour
 
         if (Physics.Raycast(ray, out var hitInfo, Mathf.Infinity, _groundMask))
         {
-            // The Raycast hit something, return with the position.
             return (success: true, position: hitInfo.point);
         }
         else
         {
-            // The Raycast did not hit anything.
             return (success: false, position: Vector3.zero);
         }
     }
+}
+
+[System.Serializable]
+public class AbilityMap
+{
+    public KeyCode KeyCode;
+    public AbilityBase Ability;
 }

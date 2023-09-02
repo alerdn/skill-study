@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum AbilityType
+{
+    Shoot,
+}
+
 public abstract class AbilityBase : MonoBehaviour
 {
     [SerializeField] private float _cooldownTime;
