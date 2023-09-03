@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
-public class PooledParticleListener : MonoBehaviour
+public class PooledShootParticleListener : MonoBehaviour
 {
     public IObjectPool<ParticleSystem> Pool;
 

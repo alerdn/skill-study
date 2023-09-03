@@ -63,11 +63,11 @@ public class PlayerControlller : MonoBehaviour
 
         if (_characterController.isGrounded)
         {
-            _verticalSpeed = 0f;
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                _verticalSpeed = _jumpForce;
-            }
+            // _verticalSpeed = 0f;
+            // if (Input.GetKeyDown(KeyCode.Space))
+            // {
+            //     _verticalSpeed = _jumpForce;
+            // }
         }
 
         _verticalSpeed -= GRAVITY * _mass * Time.deltaTime;

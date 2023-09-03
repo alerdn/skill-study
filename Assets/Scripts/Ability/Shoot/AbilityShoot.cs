@@ -23,7 +23,7 @@ public class AbilityShoot : AbilityBase
         var ps = Instantiate(_bulletPrefab, _shootPosition);
         ps.gameObject.SetActive(false);
 
-        ps.GetComponent<PooledParticleListener>().Pool = _bulletPool;
+        ps.GetComponent<PooledShootParticleListener>().Pool = _bulletPool;
 
         return ps;
     }

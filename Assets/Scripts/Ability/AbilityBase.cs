@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,8 @@ public enum AbilityType
 
 public abstract class AbilityBase : MonoBehaviour
 {
+    public event Action<float> OnUseAbility;
+
     [SerializeField] private float _cooldownTime;
 
     private bool _canUse = true;
@@ -17,6 +20,7 @@ public abstract class AbilityBase : MonoBehaviour
     {
         if (_canUse)
         {
+            OnUseAbility?.Invoke(_cooldownTime);
             Ability();
             StartCooldown();
         }
