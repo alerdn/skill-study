@@ -4913,3 +4913,5 @@ MonoBehaviour:
     type: 3}
   _vfxGranadeExplosion: {fileID: 3393994461694419936, guid: 216fb45992eb4f542b614b566be941e6,
     type: 3}
+  _areaOfDamage: {fileID: 5169777248682171841, guid: c5cbc73e626ba924b95866c0b37bae3e,
+    type: 3}

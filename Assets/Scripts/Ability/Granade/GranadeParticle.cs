@@ -5,6 +5,7 @@ public class GranadeParticle : MonoBehaviour
     [SerializeField] private int _maxImpactCount = 3;
     [SerializeField] private ParticleSystem _vfxGranadeImpact;
     [SerializeField] private ParticleSystem _vfxGranadeExplosion;
+    [SerializeField] private GranadeAreaOfDamage _areaOfDamage;
 
     private ParticleSystem _vfxGranade;
     private ParticleSystem.Particle[] _granades;
@@ -32,6 +33,9 @@ public class GranadeParticle : MonoBehaviour
             Instantiate(_vfxGranadeExplosion, _granades[0].position, Quaternion.identity);
             Destroy(_vfxGranade.gameObject);
         }
+
+        GranadeAreaOfDamage areaOfDamage = Instantiate(_areaOfDamage, _granades[0].position, Quaternion.identity);
+        Destroy(areaOfDamage.gameObject, 1f);
     }
 
     private int UpdateParticlesData()

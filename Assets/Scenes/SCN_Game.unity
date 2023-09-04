@@ -1410,7 +1410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d86cdbc9e8830664c8fda7fefe9c9721, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cooldownTime: 0.1
+  _data: {fileID: 11400000, guid: f3a535d1ffec9cc46910fa1d3a115750, type: 2}
   _shootPosition: {fileID: 463351967}
   _bulletPrefab: {fileID: 1030785588961789335, guid: 1d1a03c636d0191448d5229a1ee4c4d0,
     type: 3}
@@ -2909,7 +2909,7 @@ PrefabInstance:
     - target: {fileID: 83048412087463682, guid: 37bc3f4a096107240a53e7de9e90e582,
         type: 3}
       propertyPath: m_Name
-      value: Granade_SkillUI
+      value: Granade_AbilityUI
       objectReference: {fileID: 0}
     - target: {fileID: 6026699827170804350, guid: 37bc3f4a096107240a53e7de9e90e582,
         type: 3}
@@ -3742,7 +3742,7 @@ GameObject:
   - component: {fileID: 1240260882}
   - component: {fileID: 1240260881}
   m_Layer: 5
-  m_Name: Skills Holder
+  m_Name: Abilities Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3939,6 +3939,84 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1241657051}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1253804181
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6400900999362769299, guid: c117a602793f7da4196d77618ec4ec2b,
+        type: 3}
+      propertyPath: m_Name
+      value: VFX_Granade_Ball
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400900999362769299, guid: c117a602793f7da4196d77618ec4ec2b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005548098154551705, guid: c117a602793f7da4196d77618ec4ec2b,
+        type: 3}
+      propertyPath: CollisionModule.collidesWith.m_Bits
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7239539614905359034, guid: c117a602793f7da4196d77618ec4ec2b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7239539614905359034, guid: c117a602793f7da4196d77618ec4ec2b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 7239539614905359034, guid: c117a602793f7da4196d77618ec4ec2b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 7239539614905359034, guid: c117a602793f7da4196d77618ec4ec2b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7239539614905359034, guid: c117a602793f7da4196d77618ec4ec2b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7239539614905359034, guid: c117a602793f7da4196d77618ec4ec2b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7239539614905359034, guid: c117a602793f7da4196d77618ec4ec2b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7239539614905359034, guid: c117a602793f7da4196d77618ec4ec2b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7239539614905359034, guid: c117a602793f7da4196d77618ec4ec2b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7239539614905359034, guid: c117a602793f7da4196d77618ec4ec2b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c117a602793f7da4196d77618ec4ec2b, type: 3}
 --- !u!1 &1288609806
 GameObject:
   m_ObjectHideFlags: 0
@@ -5613,7 +5691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bcdfb70a52f92e4b86562761a5e7781, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cooldownTime: 1
+  _data: {fileID: 11400000, guid: 6c711d021399113468508636ca3cf7d1, type: 2}
   _shootPosition: {fileID: 463351967}
   _vfxGranade: {fileID: 7005548098154551705, guid: c117a602793f7da4196d77618ec4ec2b,
     type: 3}
@@ -5931,7 +6009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d86cdbc9e8830664c8fda7fefe9c9721, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cooldownTime: 5
+  _data: {fileID: 0}
   _shootPosition: {fileID: 897731102}
   _bulletPrefab: {fileID: 1030785588961789335, guid: 1d1a03c636d0191448d5229a1ee4c4d0,
     type: 3}
@@ -7020,7 +7098,7 @@ PrefabInstance:
     - target: {fileID: 83048412087463682, guid: 37bc3f4a096107240a53e7de9e90e582,
         type: 3}
       propertyPath: m_Name
-      value: Shoot_SkillUI
+      value: Shoot_AbilityUI
       objectReference: {fileID: 0}
     - target: {fileID: 6026699827170804350, guid: 37bc3f4a096107240a53e7de9e90e582,
         type: 3}
@@ -7138,3 +7216,4 @@ SceneRoots:
   - {fileID: 1288609807}
   - {fileID: 1741107790}
   - {fileID: 1357221740}
+  - {fileID: 1253804181}
