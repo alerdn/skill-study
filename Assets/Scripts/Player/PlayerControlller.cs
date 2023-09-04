@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerControlller : MonoBehaviour
 {
+    public CharacterController CharacterController => _characterController;
+
     private const float GRAVITY = 9.87f;
 
     [SerializeField] private float _mass = 2f;
@@ -13,6 +16,7 @@ public class PlayerControlller : MonoBehaviour
     [SerializeField] private AbilityMap[] _abilitiesMap;
 
     private CharacterController _characterController;
+    private Rigidbody _rigidbody;
     private Camera _cam;
     private float _turnSmoothVelocity;
     private float _verticalSpeed;
@@ -21,6 +25,7 @@ public class PlayerControlller : MonoBehaviour
     {
         _cam = Camera.main;
         _characterController = GetComponent<CharacterController>();
+        _rigidbody = GetComponent<Rigidbody>();
     }
 
     private void Update()
@@ -29,6 +34,8 @@ public class PlayerControlller : MonoBehaviour
         Movement();
         Aim();
     }
+
+    #region Abilities
 
     private void Ability()
     {
@@ -41,7 +48,34 @@ public class PlayerControlller : MonoBehaviour
         }
     }
 
+    public void Dash(float multiplier, float duration)
+    {
+        Vector3 speedVector = CalculateSpeedVector();
+
+        Vector3 dashVector = new Vector3(speedVector.x * multiplier, speedVector.y, speedVector.z * multiplier);
+        StartCoroutine(DashRoutine(dashVector, duration));
+    }
+
+    private IEnumerator DashRoutine(Vector3 direction, float duration)
+    {
+        float startTime = Time.time;
+        while (Time.time < startTime + duration)
+        {
+            _characterController.Move(direction * Time.deltaTime);
+            yield return null;
+        }
+    }
+
+    #endregion
+
     private void Movement()
+    {
+        Vector3 speedVector = CalculateSpeedVector();
+
+        _characterController.Move(speedVector * Time.deltaTime);
+    }
+
+    private Vector3 CalculateSpeedVector()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
@@ -61,19 +95,10 @@ public class PlayerControlller : MonoBehaviour
             speedVector = Vector3.zero;
         }
 
-        if (_characterController.isGrounded)
-        {
-            // _verticalSpeed = 0f;
-            // if (Input.GetKeyDown(KeyCode.Space))
-            // {
-            //     _verticalSpeed = _jumpForce;
-            // }
-        }
-
         _verticalSpeed -= GRAVITY * _mass * Time.deltaTime;
         speedVector.y = _verticalSpeed;
 
-        _characterController.Move(speedVector * Time.deltaTime);
+        return speedVector;
     }
 
     private void Aim()

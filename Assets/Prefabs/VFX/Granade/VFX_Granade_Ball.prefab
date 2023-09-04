@@ -3860,7 +3860,7 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 8
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
@@ -3870,12 +3870,12 @@ ParticleSystem:
   TriggerModule:
     enabled: 0
     serializedVersion: 2
-    inside: 1
+    inside: 0
     outside: 0
-    enter: 0
+    enter: 2
     exit: 0
     colliderQueryMode: 0
-    radiusScale: 1
+    radiusScale: 2
     primitives: []
   SubModule:
     serializedVersion: 2
@@ -4256,7 +4256,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
   CustomDataModule:
     enabled: 0
-    mode0: 0
+    mode0: 1
     vectorComponentCount0: 4
     color0:
       serializedVersion: 2
