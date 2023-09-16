@@ -6,11 +6,11 @@ public class GranadeParticle : MonoBehaviour
     [SerializeField] private ParticleSystem _vfxGranadeImpact;
     [SerializeField] private ParticleSystem _vfxGranadeExplosion;
     [SerializeField] private GranadeAreaOfDamage _areaOfDamage;
+    [SerializeField] private float _impactHeightModifier = 1f;
 
     private ParticleSystem _vfxGranade;
     private ParticleSystem.Particle[] _granades;
     private int _impactCount = 0;
-
 
     private void Start()
     {
@@ -23,7 +23,7 @@ public class GranadeParticle : MonoBehaviour
 
         if (other.layer == LayerMask.NameToLayer("Ground"))
         {
-            Vector3 impactPosition = new Vector3(_granades[0].position.x, _granades[0].position.y * .1f, _granades[0].position.z);
+            Vector3 impactPosition = new Vector3(_granades[0].position.x, _granades[0].position.y - _impactHeightModifier, _granades[0].position.z);
             Instantiate(_vfxGranadeImpact, impactPosition, Quaternion.identity);
         }
 

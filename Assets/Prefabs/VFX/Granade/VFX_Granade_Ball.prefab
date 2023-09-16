@@ -4915,3 +4915,4 @@ MonoBehaviour:
     type: 3}
   _areaOfDamage: {fileID: 5169777248682171841, guid: c5cbc73e626ba924b95866c0b37bae3e,
     type: 3}
+  _impactHeightModifier: 0.5
